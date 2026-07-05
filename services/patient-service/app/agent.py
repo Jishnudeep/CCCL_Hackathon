@@ -13,47 +13,38 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import datetime
-from zoneinfo import ZoneInfo
-
 from google.adk.agents import Agent
+from google.adk.agents.callback_context import CallbackContext
 from google.adk.apps import App
 from google.adk.models import Gemini
+from google.adk.tools import AgentTool, google_search
 from google.genai import types
 
+from app.firestore_tool import retrieve_patient_record_tool
 
-def get_weather(query: str) -> str:
-    """Simulates a web search. Use it get information on weather.
+async def init_state(callback_context: CallbackContext) -> None:
+    """Callback to initialize the patient_record placeholder in session state."""
+    if "patient_record" not in callback_context.state:
+        callback_context.state["patient_record"] = (
+            "No record retrieved yet. Please ask the user for their encounter ID and patient name, "
+            "then call retrieve_patient_record_tool to load their SOAP note and details."
+        )
 
-    Args:
-        query: A string containing the location to get weather information for.
-
-    Returns:
-        A string with the simulated weather information for the queried location.
-    """
-    if "sf" in query.lower() or "san francisco" in query.lower():
-        return "It's 60 degrees and foggy."
-    return "It's 90 degrees and sunny."
-
-
-def get_current_time(query: str) -> str:
-    """Simulates getting the current time for a city.
-
-    Args:
-        city: The name of the city to get the current time for.
-
-    Returns:
-        A string with the current time information.
-    """
-    if "sf" in query.lower() or "san francisco" in query.lower():
-        tz_identifier = "America/Los_Angeles"
-    else:
-        return f"Sorry, I don't have timezone information for query: {query}."
-
-    tz = ZoneInfo(tz_identifier)
-    now = datetime.datetime.now(tz)
-    return f"The current time for query {query} is {now.strftime('%Y-%m-%d %H:%M:%S %Z%z')}"
-
+# Sub-agent acting as a search tool to avoid mixing search and function tools (disabling AFC)
+google_search_agent = Agent(
+    name="google_search_agent",
+    description="Useful for searching Google to answer general medical questions, definitions, and medical terminology.",
+    model=Gemini(
+        model="gemini-flash-latest",
+        retry_options=types.HttpRetryOptions(attempts=3),
+    ),
+    instruction="""
+    You are a medical search specialist.
+    Use the 'google_search' tool to find high-quality, accurate, and up-to-date medical explanations or definitions.
+    Provide a direct, clear, and easy-to-understand response based on the search results.
+    """,
+    tools=[google_search],
+)
 
 root_agent = Agent(
     name="root_agent",
@@ -61,8 +52,27 @@ root_agent = Agent(
         model="gemini-flash-latest",
         retry_options=types.HttpRetryOptions(attempts=3),
     ),
-    instruction="You are a helpful AI assistant designed to provide accurate and useful information.",
-    tools=[get_weather, get_current_time],
+    instruction="""
+    You are a friendly and compassionate patient health assistant.
+    Your goal is to answer the patient's questions about their medical records, diagnosis, and SOAP notes.
+    
+    Current loaded patient record:
+    {patient_record}
+    
+    If the record is not loaded yet (or contains the 'No record retrieved yet' instructions):
+    1. Prompt the user for their name and encounter ID (e.g. D2N###).
+    2. Once provided, call 'retrieve_patient_record_tool' to load their details.
+    
+    Once the record is successfully loaded, warmly answer any questions they have about their SOAP note, provisional diagnosis, prescribed medications, symptoms, and planned next steps.
+    
+    If the patient asks general medical questions (e.g., about drug side effects, medical conditions, or definitions of terms) that are not detailed in their record, use the 'google_search_agent' tool to search for accurate details.
+    
+    IMPORTANT:
+    - Never make up information. Use 'google_search_agent' for questions outside the record.
+    - Always advise the patient to consult their primary healthcare physician for final clinical advice.
+    """,
+    tools=[retrieve_patient_record_tool, AgentTool(google_search_agent)],
+    before_agent_callback=init_state,
 )
 
 app = App(
