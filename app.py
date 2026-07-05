@@ -150,7 +150,25 @@ def get_auth_headers(base_url: str, custom_token: str = None) -> dict:
         headers["Authorization"] = f"Bearer {token}"
         return headers
         
-    # 2. Automated Application Default Credentials (ADC) token fetch
+    # 2. Local developer fallback: call 'gcloud auth print-identity-token' via subprocess
+    try:
+        import subprocess
+        result = subprocess.run(
+            ["gcloud", "auth", "print-identity-token"],
+            capture_output=True,
+            text=True,
+            shell=True
+        )
+        if result.returncode == 0:
+            lines = [line.strip() for line in result.stdout.split('\n') if line.strip()]
+            for line in lines:
+                if line.startswith("eyJ") and len(line.split('.')) == 3:
+                    headers["Authorization"] = f"Bearer {line}"
+                    return headers
+    except Exception:
+        pass
+
+    # 3. Production GCP environment: standard OIDC token fetch via google-auth
     try:
         import google.auth
         import google.auth.transport.requests
