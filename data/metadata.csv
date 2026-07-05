@@ -1,0 +1,6 @@
+dataset,encounter_id,id,doctor_name,patient_gender,patient_age,patient_firstname,patient_familyname,cc,2nd_complaints
+virtscribe,D2N028,VS011,edwards,male ,42.0,patrick,allen,abdominal pain; diarrhea,hepatomegaly
+virtscribe,D2N031,VS027,stewart,female ,75.0,sophia,brown,right ductal carcinoma in situ,none
+virtscribe,D2N074,VS024,flores,male ,52,bruce,ward,Pituitary lesion,headaches
+virtscribe,D2N075,VS015,sanders,female ,53,betty,hill,"chest pain, suspected esophagitis",anxiety 
+virtscribe,D2N076,VS021,evelyn,female ,22-month,katherine,lopez,renal screening tests,none
