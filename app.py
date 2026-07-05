@@ -138,16 +138,46 @@ def generate_mock_chat_response(patient_name: str, patient_age: str, interaction
 
 # --- ADK STREAMING RUNNER CLIENT ---
 
-def stream_adk_agent(base_url: str, message: str, state_init: dict = None) -> Iterator[str]:
+def get_auth_headers(base_url: str, custom_token: str = None) -> dict:
+    """Generates correct headers including OAuth/OIDC ID token for Cloud Run authorization."""
+    headers = {"Content-Type": "application/json"}
+    
+    # 1. Custom token override
+    if custom_token and custom_token.strip():
+        token = custom_token.strip()
+        if token.lower().startswith("bearer "):
+            token = token[7:]
+        headers["Authorization"] = f"Bearer {token}"
+        return headers
+        
+    # 2. Automated Application Default Credentials (ADC) token fetch
+    try:
+        import google.auth
+        import google.auth.transport.requests
+        from google.oauth2 import id_token
+        
+        audience = base_url.rstrip("/")
+        auth_req = google.auth.transport.requests.Request()
+        
+        token = id_token.fetch_id_token(auth_req, audience)
+        if token:
+            headers["Authorization"] = f"Bearer {token}"
+    except Exception:
+        pass
+        
+    return headers
+
+def stream_adk_agent(base_url: str, message: str, state_init: dict = None, custom_token: str = None) -> Iterator[str]:
     """Interfaces with a deployed ADK service, yields the response chunks in real-time."""
     user_id = f"user_{uuid.uuid4()}"
+    headers = get_auth_headers(base_url, custom_token)
     
     # 1. Create Session
     session_url = f"{base_url.rstrip('/')}/apps/app/users/{user_id}/sessions"
     session_data = {"state": state_init or {}}
     
     try:
-        session_res = requests.post(session_url, json=session_data, headers={"Content-Type": "application/json"}, timeout=15)
+        session_res = requests.post(session_url, json=session_data, headers=headers, timeout=15)
         session_res.raise_for_status()
         session_id = session_res.json()["id"]
     except Exception as e:
@@ -164,7 +194,7 @@ def stream_adk_agent(base_url: str, message: str, state_init: dict = None) -> It
     }
     
     try:
-        response = requests.post(run_url, json=payload, headers={"Content-Type": "application/json"}, stream=True, timeout=60)
+        response = requests.post(run_url, json=payload, headers=headers, stream=True, timeout=60)
         response.raise_for_status()
         
         for line in response.iter_lines():
@@ -244,8 +274,15 @@ with st.sidebar:
     
     patient_service_url = st.text_input(
         "Patient Service URL",
-        value="	https://patient-service-1011679267195.us-central1.run.app",
+        value="https://patient-service-1011679267195.us-central1.run.app",
         help="Base URL of patient-service deployment"
+    ).strip()
+    
+    custom_auth_token = st.text_input(
+        "GCP Authorization Token (Optional)",
+        value="",
+        type="password",
+        help="Paste a manual Bearer/ID token if Application Default Credentials (ADC) is not set up."
     )
     
     st.markdown("---")
@@ -348,7 +385,7 @@ with tab_doc:
                     
                     full_response = ""
                     # Stream live from Cloud Run doctor-service
-                    for chunk in stream_adk_agent(doctor_service_url, user_message):
+                    for chunk in stream_adk_agent(doctor_service_url, user_message, custom_token=custom_auth_token):
                         full_response += chunk
                         note_placeholder.markdown(full_response)
                         
@@ -414,10 +451,11 @@ with tab_pat:
                 with st.spinner("Initializing Cloud Run patient session..."):
                     try:
                         session_url = f"{patient_service_url.rstrip('/')}/apps/app/users/{st.session_state.patient_user_id}/sessions"
+                        headers = get_auth_headers(patient_service_url, custom_auth_token)
                         session_res = requests.post(
                             session_url,
                             json={"state": {"encounter_id": int_id, "patient_name": pat_name}},
-                            headers={"Content-Type": "application/json"},
+                            headers=headers,
                             timeout=8
                         )
                         session_res.raise_for_status()
@@ -486,7 +524,8 @@ with tab_pat:
                                     state_init={
                                         "encounter_id": st.session_state.interaction_id,
                                         "patient_name": st.session_state.patient_name
-                                    }
+                                    },
+                                    custom_token=custom_auth_token
                                 )
                                 for chunk in stream_generator:
                                     full_reply += chunk
