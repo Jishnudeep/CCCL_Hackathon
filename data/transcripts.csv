@@ -1,0 +1,681 @@
+dataset,encounter_id,dialogue,note
+virtscribe,D2N028,"[doctor] patrick allen . date of birth : 7/7/1977 . new patient visit . past medical history includes gerd , anxiety , depression . here for chronic abdominal pain . he had an abdominal ct on 1/23/2020 . impression is a normal ct of the ab- abdomen .
+[doctor] hello , are you mr. allen ?
+[patient] yes , i am .
+[doctor] hi . my name is dr. edwards . nice to meet you .
+[patient] nice to meet you .
+[doctor] welcome to the gi specialty clinic .
+[patient] thank you .
+[doctor] did you have any problems finding us ?
+[patient] no , i've been here with my sister once before .
+[doctor] good . so how can i help you today ? uh , the referral i have is for abdominal pain and diarrhea .
+[patient] right . so i've had ... i've been having this pain right here in my stomach , like right around here .
+[doctor] so in the area of your mid abdomen , just below the belly button ?
+[patient] correct . i've had the pain on and off for about two years . i finally went to the er and a ... a few months ago and they did a ct scan .
+[doctor] i saw that .
+[patient] yeah . they said they did n't really see anything on the scan .
+[doctor] yes , i agree . it looked normal .
+[patient] the problem is i'm either constipated or have explosive diarrhea .
+[doctor] is the pain there all the time ?
+[patient] it's a nagging feeling and it just depends . sometimes it bothers me , sometimes it does n't .
+[doctor] has this been the case over the past two years as well ?
+[patient] more recently in the past couple months , at least with the constipation and diarrhea .
+[doctor] and before that , how are your bowel movements ?
+[patient] they were normal .
+[doctor] uh , okay . so any blood in your stool ?
+[patient] nope .
+[doctor] do you feel like you have more constipation or diarrhea ?
+[patient] probably more constipation .
+[doctor] okay , so when you're constipated , do you not have a bowel movement or is the stool hard ?
+[patient] i usually do n't go , but when i do , it's hard .
+[doctor] and how often do you have a bowel movement when you are constipated ?
+[patient] about three to four times a week . it's like when i need to go to the bathroom , if i can massage it , it feels like it's moving some and i can eventually go .
+[doctor] okay . and when you have a bowel movement , does the pain change ?
+[patient] yeah , it gets a little better .
+[doctor] and are you eating and drinking okay ? any nausea or vomiting , heartburn or indigestion ?
+[patient] none of that .
+[doctor] okay . so tell me about the diarrhea , how often do you get it ?
+[patient] it kinda just depends on what i eat . i think i have a very sensitive stomach . if i eat pasta with a creamy sauce , i'm probably gon na have diarrhea .
+[doctor] okay . and it does n't happen for multiple days in a row or is it just one time ?
+[patient] it's usually just one time and then it's over .
+[doctor] and how's your weight been ? any fluctuation ?
+[patient] nice and pretty stable , although i could stand to lose about 25 pounds .
+[doctor] okay . and is there any family history of gi issues that you know of ?
+[patient] not that i can think of . well , actually my sister does have problems with her stomach too . she has irritable bowel syndrome and that is kind of what i always thought i had even thought i've never been diagnosed with it .
+[doctor] okay . and is there any family history of gi cancer or liver disease ?
+[patient] nope .
+[doctor] have you ever had any surgeries on your abdomen ?
+[patient] i've never had any surgery .
+[doctor] okay , so your gallbladder , appendix , all those are still intact ?
+[patient] yup .
+[doctor] and have you ever had a colonoscopy ?
+[patient] no . i thought that happen when you turn 50 .
+[doctor] well , that's for colon cancer screening , but there are other reasons to have a colonoscopy , like unexplained abdominal pain and changes in bowel habits .
+[patient] okay .
+[doctor] well , come have a seat here and lay back so i can examine you .
+[patient] okay .
+[doctor] i'm gon na start by listening to your belly with my steth- stethoscope . and i hear bowel sounds in all four quadrants .
+[patient] what does that mean ? is everything okay ?
+[doctor] it just means that i can hear little noises in all areas of your belly , which means your bowels are active and working .
+[patient] okay , good .
+[doctor] so now , i'm going to push on your upper and lower abdomen . let me know if you have any pain .
+[patient] it hurts a little when you push right there on the left side , near my belly button .
+[doctor] okay . i do feel stool in your lower colon , which would coincide with constipation , but i also feel a slight enlargement of your liver here on the upper right side . have you had any lab work done recently ?
+[patient] yes , i have a physical about four months ago and they ... i had blood drawn then .
+[doctor] okay . and did your primary care physician say anything about the lab results ?
+[patient] he said i had some very slightly elevated liver enzymes , but we would recheck them in about six months .
+[doctor] and you remember what enzymes were elevated , alt , ast , alp ?
+[patient] he said the alt and the ast were elevated .
+[doctor] and do you take any medications , either prescription or over-the-counter ?
+[patient] i take crestor and olmesartan daily and then tylenol for occasion- occasional pain .
+[doctor] and how frequently do you take the tylenol ?
+[patient] hardly ever . maybe once a month .
+[doctor] and do you consume alcohol ?
+[patient] uh , yes , but only a couple of beers after working in the yard on saturdays .
+[doctor] okay . and no previous history of heavy alcohol or drug use ?
+[patient] nope .
+[doctor] and have you had any recent issues with excessive bruising or bleeding ?
+[patient] nope .
+[doctor] and how about any issues with your ankles or feet swelling ?
+[patient] no .
+[doctor] okay . i'm gon na take a look at your eyes and skin . i do n't see any jaundice .
+[patient] what would cause that ?
+[doctor] issues with your liver . let me take a quick listen to your heart and lungs .
+[patient] okay .
+[doctor] lungs are clear , bilateral heart sounds are normal , no murmurs , gallops , or rubs noted .
+[patient] that's good .
+[doctor] yes . the rest of your physical exam is normal other than what seems to be an increased stool burden in your colon and a slight hepatomegaly .
+[patient] what's that ?
+[doctor] increase stool burden means that there's a lot of stool sitting in your colon .
+[patient] and that's the constipation , right ? but what about the other thing ?
+[doctor] the hepatomegaly means the liver is enlarged .
+[patient] but you said mine was slightly enlarged ?
+[doctor] correct .
+[patient] so what does that mean ?
+[doctor] well , let's talk about what we found and then some possible next steps if you're in agreement .
+[patient] okay .
+[doctor] so as i said , the hepatomegaly means your liver is enlarged .
+[patient] could that be why my stomach is hurting and i'm having issues with the constipation and diarrhea ?
+[doctor] no , i think you're constipated and have occasional bouts of diarrhea because of certain foods you eat . and we can get you started right away on a fiber supplement that should help with that .
+[patient] so what about my liver ? why is it enlarged ?
+[doctor] well , there are many reasons why people can have an elevated liver enzymes and also enlarged liver . some possible causes are certain medications that can be toxic to liver , alcohol abuse , fatty liver disease , hepatitis , cirrhosis , and other liver diseases like wilson's disease .
+[patient] so what do i need to do ?
+[doctor] well , i think since it's been about four months since your blood work was done , we should check your liver enzymes in addition to a few other labs .
+[patient] okay . and then what ?
+[doctor] we will get those drawn today and then depending upon the results you may need an ultrasound of your liver . i think we need to talk about your medications too .
+[patient] which medications ?
+[doctor] crestor , how long have you been taking that ?
+[patient] about 18 months .
+[doctor] okay . well , crestor is one of the medications that can cause liver toxicity so it may be a good idea to discuss other alternatives .
+[patient] should i talk to my primary care or can you change it ?
+[doctor] i would recommend calling your primary care and discuss that with him since he follows you for your blood pressure and cholesterol .
+[patient] okay . i'll call him this afternoon .
+[doctor] great . i also think we should go ahead and get you scheduled for a liver ultrasound . if your blood work looks good , then we can always cancel that .
+[patient] okay . when do you think i'll be able to get the ultrasound done ?
+[doctor] hopefully , within the next two weeks . you will receive a call from the radiology scheduling this afternoon to get it set up .
+[patient] okay . and then what happens ?
+[doctor] when i get the results from the test , i will contact you . and depending upon what we find , we'll come up with our next steps .
+[patient] and when should i see you again ?
+[doctor] uh , let's schedule an appointment when you check out to return in four weeks . we'll discuss how you're doing with the fiber supplement and your constipation and review test results to determine if we need to do further testing on your liver .
+[patient] okay . is there anything else i can do to help with these issues ?
+[doctor] definitely refrain from drinking any alcohol , increase your water intake to at least 48 ounces a day in addition to taking the fiber supplement to help with your constipation . and be mindful of eating foods that you were sensitive to so you can avoid the bouts of diarrhea .
+[patient] okay . and i'll talk to my primary care about my crestor .
+[doctor] excellent . and do you have any other questions for me ?
+[patient] i do n't think so .
+[doctor] great . so remember when you check out the front desk , schedule follow-up appointment with me for four weeks and then go to the lab to get your blood work drawn .
+[patient] okay . sounds good .
+[doctor] and expect a call from radiology scheduling about setting up your ultrasound .
+[patient] all right . thanks , dr. edwards .
+[doctor] thank you , mr. allen .","CHIEF COMPLAINT
+
+Abdominal pain and diarrhea.
+
+HISTORY OF PRESENT ILLNESS
+
+Patrick Allen is a 42-year-old male who presents for a new patient visit for chronic abdominal pain, constipation, and diarrhea.
+
+Mr. Allen reports experiencing intermittent mid-abdominal pain for approximately 2 years. The pain is localized just inferior to the umbilicus and he describes it as a “nagging feeling” when it is present. The pain sometimes improves following a bowel movement. Unfortunately, Mr. Allen reports that the pain has been present more often in the past 2 months. In 01/2020, the patient presented to the emergency room due to the pain and underwent a CT scan.
+
+In addition to the abdominal pain, Mr. Allen complains of constipation and episodic severe diarrhea for the past 2 months; however, he estimates that the constipation is more frequent than the diarrhea. When he is constipated, he has a bowel movement 3-4 times a week and the stools are hard. Regarding his diarrhea, he has noticed that it seems to be associated with certain foods. In particular, he notes that pasta with a creamy sauce is likely to prompt an episode of diarrhea. When this occurs, he usually has just 1 bowel movement of diarrhea and then it resolves. The patient states that, prior to 2 months ago, his bowel movements were normal. Mr. Allen notes that massaging his abdomen has sometimes been helpful in producing a bowel movement.
+
+The patient’s last physical was 4 months ago, and he confirms that he did have bloodwork that day. Mr. Allen reports that his primary care provider notified him that his AST and ALT were mildly elevated and advised that they would need to recheck his liver enzymes in 6 months. The patient’s medication list includes Crestor and olmesartan daily and he estimates that he has been taking the Crestor for approximately 18 months. He also takes Tylenol as needed for pain, approximately once a month. The patient states that he drinks 2 beers once a week and denies a history of heavy alcohol or drug use. He also denies excessive bruising or bleeding and any lower extremity edema.
+
+The patient denies blood in his stools, nausea, vomiting, heartburn, and indigestion. He confirms that he is eating and drinking normally, and his weight has been stable. He does acknowledge that he would like to lose 25 pounds, however. He has no family history of gastrointestinal cancer or liver disease; however, his sister has irritable bowel syndrome (IBS). The patient has not had any prior abdominal surgeries and he has never had a colonoscopy.
+
+PHYSICAL EXAM
+
+Respiratory
+Lungs clear to auscultation bilaterally.
+
+Cardiovascular
+No murmurs, gallops, or rubs.
+
+Abdomen
+Normoactive bowel sounds in all 4 quadrants. There is mild left periumbilical tenderness to palpation, mild hepatomegaly, and increased stool burden in colon.
+
+RESULTS
+
+CT of Abdomen, 01/23/2020.
+Impression: Normal CT of abdomen.
+
+ASSESSMENT
+
+• Constipation
+• Mild hepatomegaly
+
+PLAN
+
+Patrick Allen is a 42-year-old male who presents for a new patient visit for chronic abdominal pain, constipation, and diarrhea. The most likely etiology of his abdominal pain is constipation given his history, exam with increased stool burden, and normal abdominal CT. Mild hepatomegaly was also noted on exam today and the patient reportedly had elevated liver enzymes on labs with his primary care provider 4 months ago. The patient is currently on Crestor which may be contributing to his elevated liver enzymes. We discussed findings, diagnosis, and next steps at length.
+
+Constipation
+• Start daily fiber supplement and increase water consumption to at least 48 ounces daily to help with bowel regularity.
+• Avoid trigger foods that may cause episodes of diarrhea.
+
+Mild Hepatomegaly
+• Repeat liver enzyme labs today.
+• Schedule a liver ultrasound pending lab results.
+• Encouraged to cease alcohol consumption.
+• Patient to contact his PCP to discuss alternative medications.
+
+INSTRUCTIONS
+
+Return to clinic in 4 weeks.
+"
+virtscribe,D2N031,"[doctor] sophia brown . date of birth , 3/17/1946 . this is a new patient visit . she's here to establish care for a history of dcis . we'll go over the history with the patient .
+[doctor] hello , ms. brown .
+[patient] hi . yes , that's me .
+[doctor] wonderful . i'm doctor stewart . it's lovely to meet you .
+[patient] you as well .
+[doctor] so , you've come to see me today because you had a right breast lumpectomy last year . is that right ?
+[patient] yes . on january 20th , 2020 .
+[doctor] okay . and how have you been since then ? any problems or concerns ?
+[patient] no , i'm feeling good . i do my self breast exams religiously now and have n't felt anything since .
+[doctor] perfect . i want to back up and go over your history so i can make sure everything in your chart is correct and i do n't miss anything . so , i'll tell you what we have in your chart from your other providers and you tell me if anything is wrong or missing . sound good ?
+[patient] sounds good .
+[doctor] great . so , i have that you were found to have a calcification in your right breast during a mammogram in october 2019 . was that just a normal screening mammogram , or was it done because you felt a lump ?
+[patient] it was just a normal one you're supposed to get every so often .
+[doctor] i see . and then it looks like you had an ultrasound of your right breast on november 3rd , 2019 , which revealed a mass at the two o'clock position , 11 centimeters from the nipple in the retroareolar region . the report states the mass was point four by two by three centimeters .
+[patient] yes , that sounds right . hard to remember now , though .
+[doctor] yep , definitely .
+[doctor] based on those results , they decided to do an ultrasound-guided core needle biopsy on december 5th , 2019 . pathology results during that biopsy came back as grade two , er positive , pr positive , dcis , or ductal carcinoma in situ .
+[patient] yes . unfortunately .
+[doctor] i know . scary stuff . but you had a lumpectomy on january 20th , 2020 , which removed the eight millimeter tumor and margins were negative . the pathology confirmed dcis . looks like they also removed 5 lymph nodes , which , thankfully , were negative for malignancy . that's great !
+[patient] yeah , i was definitely very relieved .
+[doctor] and your last mammogram was in january 2021 ? and that was normal .
+[patient] yes .
+[doctor] okay . so , i feel like i have a good grasp of what's been going on with you now . and you're here today to establish care with me so i can continue to follow you and make sure you're doing well , right ?
+[patient] yes . fingers crossed .
+[doctor] definitely . we'll keep a close eye on you and take good care of you .
+[patient] okay , sounds good .
+[doctor] i have a few more questions for you . when was your last colonoscopy ?
+[patient] i had one in 2018 and , if i remember correctly , i had one polyp and that was removed and it was n't cancerous .
+[doctor] okay , yes , i see that report now . one polyp in the sigmoid colon which had a benign tubular adenoma . okay . and when was your last menstrual period ?
+[patient] gosh . it was probably around 30 years ago .
+[doctor] okay . do you have children ?
+[patient] i do . i have five .
+[doctor] ah , big family then . that's nice .
+[patient] yes . and they're all having kids of their own now , so it's getting even bigger .
+[doctor] i bet . sounds like fun .
+[patient] it is .
+[doctor] did you have any other pregnancies that were miscarriages or terminations ?
+[patient] really , i did not .
+[doctor] okay . so for the record , that's g5 p5 . and now that you're post-menopausal , are you currently or have you ever been on hormone replacement therapy ?
+[patient] my primary care doctor gave me the option years ago but i decided against it .
+[doctor] okay . and on your review systems form , you indicated that you've not had any recent weight loss or gain , headaches , bone pain , urinary symptoms , or blood in the stools . but you did indicate that you have some back pain , joint pain , and high cholesterol . tell me some more about those .
+[patient] okay . so i've seen doctors for all of those . they've said , excuse me , the back and knee pain are age-related . and the cholesterol is a fairly new diagnosis , but i am working on exercise and cutting back on fatty foods to see if i can get it lower without any medication .
+[doctor] okay . and your primary care doctor is following you for that , right ?
+[patient] that's correct .
+[doctor] okay . for medications , i have that you take coq10 , vitamin d , vitamin c , fish oil , and elderberry fruit . is that all right ?
+[patient] yes , and that's all .
+[doctor] okay . so for your medical history , it's high cholesterol and stage 0 er/pr positive invasive ductal carcinoma of the right breast . any surgeries other than the lumpectomy ?
+[patient] i did have my tubes tied after my last baby , but that's all .
+[doctor] okay . and how about family history ?
+[patient] my mom had non-hodgkin's lymphoma and my dad had prostate cancer and heart disease , but i think that's it .
+[doctor] all right . any family history of breast cancer ?
+[patient] none .
+[doctor] did any of your children have medical issues or siblings with medical problems ?
+[patient] i do not have any siblings and , thankfully , my children are all healthy .
+[doctor] wonderful . do you have any history of smoking , illicit drug use , heavy alcohol consumption ?
+[patient] no drugs . i do drink socially , but never more than that . and i used to smoke , but really , everybody did back then and i probably quit about 30 years ago .
+[doctor] excellent . i have that you're allergic to penicillin . any other allergies ?
+[patient] nope , just penicillin .
+[doctor] okay . i think that covers it . hop up here and let me take a look at you .
+[doctor] okay , so let's use the normal new patient exam template . only change to make is the breast exam . there are no palpable masses , however , there is skin thickening at the medial inferior aspect of the right breast which may be radiation skin changes .
+[doctor] in the result section , note that her ecog performance status today is zero .
+[doctor] do you have ... did you have radiation after the lumpectomy ?
+[patient] i did . we also talked about endocrine therapy , but i decided against that .
+[doctor] okay . so your exam looks good , no masses , just some skin changes from that radiation . now , let's go over the plan for you .
+[patient] okay , sounds good .
+[doctor] as you know , you've had dcis which we'll list in my note as stage zero , er/pr positive , invasive ductal carcinoma of the right breast . your status post-lumpectomy with removal of five lymph nodes that were benign . you also had , um , radiation therapy but declined endocrine therapy . today's clinical examination shows no evidence of recurrence with the dcis or other malignancy and your mammogram in january , 2021 was also negative for recurrence and malignancy .
+[doctor] so , based on all of that , we can just continue to observe you .
+[patient] okay . that sounds great . and when do i come back in to see you ?
+[doctor] in a year , but you should have another mammogram in april of 2022 before you come back to see me .
+[patient] okay , i can do that .
+[doctor] wonderful . i'm glad to see you doing so well . do you have any questions or concerns i can address for you today ?
+[patient] i do n't think so .
+[doctor] okay , great . my nurse will be in shortly to discharge you . take care !
+[patient] you as well .","CHIEF COMPLAINT
+
+History of right ductal carcinoma in situ (DCIS).
+
+HISTORY OF PRESENT ILLNESS
+
+Sophia Brown is a 75 y.o. female who presents today for a new patient evaluation due to her history of right DCIS. She is doing well but wishes to establish care today for continued monitoring.
+
+The patient underwent a screening mammogram in 10/2019 and was found to have a calcification in the right breast. She then had a right breast ultrasound on 11/03/2019 which revealed a mass at the 2 o’clock position, 11 cm from the nipple, in the retroareolar region. The report states the mass was 0.4 by 2.0 by 3.0 centimeters. She subsequently had an ultrasound-guided core needle biopsy on 12/05/2019 and pathology results revealed grade 2 ER-positive, PR-positive DCIS. The patient then had a lumpectomy with lymphadenectomy performed on 01/20/2020. The tumor was 8 mm with negative margins and the 5 lymph nodes removed were all benign. Pathology from the tumor confirmed DCIS. Her lumpectomy was followed by adjuvant radiation therapy. Endocrine therapy was also offered but the patient declined. She has since had a mammogram in 01/2021 which was normal. The patient also reports that she performs self-breast exams regularly at home.
+
+Mrs. Brown is a G5P5 female and estimates that her last menstrual period was approximately 30 years ago. She is not currently and has never been on hormone replacement therapy.
+
+The patient’s last colonoscopy was done in 2018. She had a sigmoid polypectomy at that time and pathology showed a tubular adenoma.
+
+Her cholesterol was recently noted to be elevated and the patient reports that she is exercising and reducing fatty food intake accordingly. This is being followed by her primary care provider.
+
+PAST HISTORY
+
+Medical
+Hypercholesterolemia.
+Stage 0 ER/PR-positive invasive ductal carcinoma of the right breast, status post lumpectomy and adjuvant radiation therapy.
+
+Surgical
+Right lumpectomy, lymphadenectomy x5, 01/20/2020.
+Bilateral tubal ligation.
+
+SOCIAL HISTORY
+
+Alcohol: Socially. No history of heavier consumption.
+Illicit drug use: Never.
+Tobacco: Former smoker. Quit approximately 30 years ago.
+Patient has 5 children and multiple grandchildren.
+
+FAMILY HISTORY
+
+Mother: Non-Hodgkin’s lymphoma.
+Father: Prostate cancer, heart disease.
+Her children are healthy. She has no siblings. Denies family history of breast cancer.
+
+CURRENT MEDICATIONS
+
+Co-Q 10.
+Vitamin D.
+Vitamin C.
+Fish oil.
+Elderberry fruit.
+
+ALLERGIES
+
+Penicillin.
+
+REVIEW OF SYSTEMS
+
+Negative for weight loss, weight gain, headaches, bone pain, urinary symptoms, blood in the stools.
+Positive for back pain, joint pain, high cholesterol. Patient has sought care for these complaints. She reports that she was told the back pain and joint pain (knee) are age-related. She is being followed for the high cholesterol by her primary care provider.
+
+PHYSICAL EXAM
+
+The ECOG performance status today is grade 0.
+Breast: There are no palpable masses; however, there is some skin thickening at the medial inferior aspect of the right breast which may be radiation skin changes.
+
+ASSESSMENT
+
+Stage 0 ER/PR-positive invasive ductal carcinoma of the right breast.
+The patient is status post lumpectomy with removal of 5 lymph nodes which were benign. She also underwent adjuvant radiation therapy but declined endocrine therapy. Today’s clinical examination shows no evidence of recurrent disease or other malignancy. She also had a negative mammogram in 01/2021.
+
+PLAN
+
+1. We will continue to observe the patient.
+2. She is due for a mammogram in 04/2022.
+3. She should follow up with me in 1 year after the mammogram."
+virtscribe,D2N074,"[doctor] patient , bruce ward . date of birth 5/21/1969 . please use my neuro consult template . this is a 52-year-old male with dia- newly diagnosed pituitary lesion . the patient is seen in consultation at the request of dr. henry howard for possible surgical intervention . mr . ward presented to his primary care provider , dr. howard , on 3/1/21 complaining of worsening headaches over the past few months . he denied any trouble with headaches in the past . his past clinical history is unremarkable .
+[doctor] worked out for worsening headaches was initiated with brain mri and serology where pituitary lesion was incidentally discovered . i personally reviewed the labs dated 3/3/21 including cbc , unes , uh , coagulation , and crp . all were normal . pituitary hormone profile demonstrates a low tsh , all other results were normal . um , i personally reviewed pertinent radiology studies including mri for the brain with contrast from 3/4/21 . the mri reveals a pituitary lesion with elevation and compression of the optic chiasm . the ventricles are normal in size and no other abnormalities are lo- are noted .
+[doctor] hello , mr . ward . nice to meet you . i'm dr. flores .
+[patient] hi , doc . nice to meet you .
+[doctor] i was just reviewing your records from dr. howard and he's referred you because the workup for headaches revealed a mass on your pituitary gland . i did review your mri images and you have a significant mass there . can you tell me about the issues you've been experiencing ?
+[patient] yeah sure . so i'm really getting fed up with these headaches . i've been trying my best to deal with them but they've been going on for months now and i'm really struggling .
+[doctor] where are the headaches located and how would you describe that pain ?
+[patient] located behind my eyes . it's like a dull nagging ache .
+[doctor] okay . was the onset gradual or sudden ?
+[patient] well it started about three months ago . and they've been getting worse over time . at first it was like three out of 10 severity , and it just gradually worsened . and now it's about six out of 10 severity . the headaches do tend to be worse in the morning and it feels like a dull ache behind the eyes . they last a few hours at a time , nothing makes them better or worse .
+[doctor] okay . can you tell me if the pain radiates , or if you have any other symptoms ? specifically feeling sick , fever , rashes , neck stiffness , numbness , weakness , passing out ?
+[patient] no . i have n't been sick or felt sick . ca n't recall a fever or any kind of rash . no- no neck issues , no numbness , no tingling . and i've never passed out in my life . but , um , for some reason recently i seem to be bumping into door frames .
+[doctor] okay . have you noticed any change in your vision or with your balance ?
+[patient] no i do n't think so . my eyes were checked in the fall .
+[doctor] okay . let's see , do you have any other medical problems that you take medicine for ?
+[patient] no i do n't have any medical problems and i do n't take any medicines . i tried tylenol a few times for the headaches but it did n't work , so i stopped .
+[doctor] i see . anyone in your family have any history of diseases ?
+[patient] i was adopted so i really have no idea .
+[doctor] okay . um , what kind of work do you do ? and are you married ?
+[patient] i work as a computer programmer and i've been married for 25 years . we just bought a small house .
+[doctor] that's nice . um , do you drink any alcohol , smoke , or use recreational drugs ?
+[patient] nope . i do n't do any of those and never have .
+[doctor] okay . um , well let me take a good look at you . um , now you'll hear me calling out some details as i perform the examination . these will be noted for me in your record and i'll be happy to answer any questions you have once we're done .
+[patient] sounds good , doc .
+[doctor] all right . the patient is alert , oriented to time , place , and person . affect is appropriate and speech is fluent . cranial nerve examination is grossly intact . no focal , motor , or sensory deficit in the upper or lower extremities . visual acuity and eye movements are normal . pupils are equal and reactive . visual field testing reveals bitemporal hemianopia . and color vision is normal .
+[doctor] all right , mr. ward . i'm going to review these pictures from the mri with you . um , now this appears to be a benign pituitary adenoma , but there's no way to be sure without sending the removed adenoma to pathology to make the diagnosis , which we will do . um , here you can see it's a well defined mass . and it's pressing right here on what we call the optic chiasm . and today when i was having you look at my fingers , you could n't see them off to the sides , that's what we call bitemporal hemianopia . and explains why you have been bumping into door frames .
+[patient] yeah i never noticed that i could n't see out of the side until you did that test , and you closed one eye with both eyes . i really could n't tell .
+[doctor] no because you're having this vision loss from the mass compressing the optic chiasm , the only option we have is to do surgery .
+[patient] okay , i understand . do you think i'll regain my vision ?
+[doctor] well there's no guarantees , but it is a possibility . i'm gon na refer you to the eye doctor for a full exam and they'll do what's called visual field test . this will map our your peripheral vision or side vision prior to surgery . and we can monitor after surgery to see if your vision is improving .
+[patient] all right .
+[doctor] and let's discuss the surgery a little more . um , we would do what's called a transsphenoidal approach to do the surgery . this is minimally invasive and we go through the sphenoid sinus . there are some risks i have to inform you of . uh , risk of anesthesia including but not limited to the risk of heart attack , stroke , and death . risk of surgery include infection , need for further surgery , wound issues such as spinal fluid leak or infection , uh , which may require long , prolonged hospitalization or additional procedure . uh , seizure , stroke , permanent numbness , weakness , difficulty speaking , or even death .
+[patient] well i guess we have to do it regardless .
+[doctor] okay . so i will have you see our surgery scheduler , deborah , on the way out to get you set up . we will get this scheduled fairly quickly so i do n't want you to be alarmed . um , she'll also get you set up today or tomorrow to have the visual field test and you may not be able to see the eye doctor until after surgery . but we have the pre-surgery visual field test for comparison after surgery .
+[patient] okay . i look forward to these headaches going away . i never thought it could be something like this going on .
+[doctor] yeah . come this way , we'll get your things lined up . please call if you think of any questions .
+[patient] thanks , doctor .
+[doctor] diagnosis will be pituitary adenoma . mr . ward is a very pleasant 52-year-old male who has benign appearing pituitary adenoma , incidentally discovered during workup for worsening headaches . he is symptomatic with clinical and radiographical evidence of optic chiasmal compression , therefor surgical intervention to excise and decompress the pituitary fossa is indicated . end of note .","CHIEF COMPLAINT
+
+Pituitary lesion.
+
+HISTORY OF PRESENT ILLNESS
+
+Bruce Ward is a 52-year-old male with a pituitary lesion. The patient is seen in consultation at the request of Dr. Henry Howard for possible surgical intervention.
+
+The patient presented to his primary care provider, Dr. Howard, on 03/01/2021 complaining of worsening headaches over the past few months. He denied any trouble with headaches in the past. Further work up of headaches with MRI of the brain revealed the pituitary lesion.
+
+Mr. Ward reports headaches started about 3 months ago, at which point they were around 3 out of 10 in severity. They have gradually worsened over time and now he rates them at about 6/10. The headaches do tend to be worse in the morning and feel like a dull ache behind the eyes. They tend to last a few hours at a time, and nothing makes them particularly worse or better. Tylenol failed to improve headaches.
+
+The patient endorses that recently he has been bumping into door frames, but no obvious problems with his balance or vision. He denies any recent sickness or feeling sick and negative for fever, rash, paresthesia, weakness, neck stiffness, or syncope.
+
+PAST HISTORY
+
+Medical
+Newly diagnosed pituitary lesion.
+
+FAMILY HISTORY
+
+No known family history; adopted.
+
+SOCIAL HISTORY
+
+Employment Status: Works as a computer programmer.
+Marital Status: Married for 25 years.
+Living Arrangement: Lives with wife, recently purchased a new house.
+Alcohol Use: None.
+Tobacco Use: Non-smoker.
+Recreational Drugs: None.
+
+PHYSICAL EXAM
+
+Neurological
+Patient alert, oriented to person, place, and time, affect appropriate and speech fluent. Cranial nerve examination grossly intact. No focal motor or sensory deficit in the upper or lower extremities.
+
+Eyes
+Visual acuity and eye movements are normal. Pupils are equal and reactive. Visual field testing reveals bitemporal hemianopia. Color vision is normal.
+
+RESULTS
+
+Labs reviewed, 03/03/2021: CBC, U&Es, coagulation, and CRP are all normal. Pituitary hormone profile demonstrates a low TSH, all other results were normal.
+
+Independent review and interpretation of MRI brain, 03/04/2021: The MRI reveals a pituitary lesion with elevation and compression of the optic chiasm. The ventricles are normal in size and no other abnormalities are noted.
+
+ASSESSMENT
+
+• Pituitary adenoma
+• Bitemporal hemianopia
+
+Mr. Ward is a very pleasant 52-year-old male who has a benign appearing pituitary adenoma discovered on work up for worsening headaches. There is clinical and radiographical evidence of optic chiasmal compression, examination today revealed a bitemporal hemianopia. Radiographically this appears to be a benign pituitary adenoma but that there was no way to be sure without a pathological diagnosis. Surgical intervention to excise and decompress the pituitary fossa is indicated given optic chiasmal compression.
+
+PLAN
+
+Pituitary adenoma.
+We discussed the general indications for surgical intervention. The risks, benefits to trans-sphenoidal resection were explained to the patient. The risks of anesthesia including but not limited to the risks of heart attack, stroke, and death. The risks of surgery including infection, need for further surgery, wound issues (such as spinal fluid leak or infection) which may require prolonged hospitalization or additional procedure, seizure, stroke, permanent numbness, weakness, difficulty speaking, or death. The patient voiced understanding and wishes to proceed with trans-sphenoidal resection of the adenoma.
+
+Bitemporal hemianopia.
+We will have the patient scheduled this week to have visual field testing with ophthalmology. The preoperative visual field will serve as baseline for comparison of postoperative visual field testing to monitor for improvement in the bitemporal hemianopia. Additionally, we discussed that unfortunately no guarantees could be given that his vision would return.
+
+INSTRUCTIONS
+
+• Refer to ophthalmology for baseline visual field testing.
+• Schedule trans-sphenoidal resection of pituitary adenoma.
+"
+virtscribe,D2N075,"[doctor] next is betty hill , uh , date of birth is 2/21/1968 . she has a past medical history of uterine fibroids and anemia . she's a new patient with a referral from the er of esophagitis . um , i reviewed our records from the er , including the normal cardiac workup , and we're about to go in and see her now . good morning . you miss hill ?
+[patient] good morning . yes . that's me .
+[doctor] hey , i'm dr. sanders . it's nice to meet you .
+[patient] nice to meet you too .
+[doctor] so tell me about what brings you in today ?
+[patient] well , i really needed to see you three months ... three months ago , but this was your first available appointment . when i called to make the appointment , i was having chest pains , but it stopped after four days , and i have n't had any since then .
+[doctor] okay . when did these four days of chest pain occur ?
+[patient] um , early october .
+[doctor] of 2020 , correct ?
+[patient] yes .
+[doctor] okay . can you think of anything that might have caused the chest pain ? did you wake up with it ?
+[patient] no . it just it randomly . i tolerated it for four days but then had to go to the emergency room because nothing i did relieved it . they did a bunch of testing and did n't find anything .
+[doctor] okay . can you point to the area of your chest where the pain was located ?
+[patient] well , it was here in the center of my chest , right behind my breastbone . it felt like i was having a heart attack . the pain was really sharp .
+[doctor] did they prescribe you any medications in the er ?
+[patient] no . they ran an ekg and did blood tests , but like i said , everything was normal .
+[doctor] okay . i see .
+[patient] they thought it was something to do with the gi system , so that's why they referred me here .
+[doctor] interesting . uh , do you remember having any heartburn or indigestion at , at the time ?
+[patient] uh , maybe . i do n't think i've ever had heartburn , so i'm not sure what that feels like .
+[doctor] was the pain worse with eating or exercise ?
+[patient] yes . with eating .
+[doctor] okay . any difficulty swallowing ?
+[patient] mm-hmm . i did .
+[doctor] okay . and that's also resolved since the initial episode three months ago ?
+[patient] yes . thankfully . the chest pain and swallowing problem got better about three days after i went to the er . but i just feel like there's something wrong .
+[doctor] okay . so how has your weight been .
+[patient] i've been trying to lose weight .
+[doctor] that's good . any in- ... issues with abdominal pain ?
+[patient] uh , no .
+[doctor] okay . good . and how about your bowel movements ; are they okay ?
+[patient] they're normal .
+[doctor] all right . are you aware of any family history of gi problems ?
+[patient] i do n't think so .
+[doctor] have had you had any surgeries on your abdomen , or gall bladder , or appendix ?
+[patient] yes . they took my gall bladder out several years ago .
+[doctor] okay . if you wan na lay down here on the table for me and lets take a look at you .
+[patient] okay .
+[doctor] so when i push on your lower belly , do you have any pain , or does it feel tender ?
+[patient] no .
+[doctor] okay . how about up here in your upper abdomen ?
+[patient] yes . it , it hurts a little .
+[doctor] okay . and even when i press lightly like this ?
+[patient] yes . uh , just a little uncomfortable .
+[doctor] okay . does it hurt more when i press over here on the left or over here on the right ? or is it about the same ?
+[patient] i'd say it's about the same .
+[doctor] okay . so we'll say you have some mild tenderness to light palpation in the upper abdominal quadrants , but everything on your exam looks normal and looks good .
+[patient] okay . good .
+[doctor] so let's talk about your symptoms real quick . obviously , with the chest discomfort , we worry about heart issues , but i'm reassured that those were ruled out with all the testing they did in the er . um , other potential causes could be anxiety , esophagitis , which is irritation of the esophagus . but typically with these , um ... but typically , these cause the pain that would last for a long time rather than that isolated incident like you had . um , it's also possible that you had intense heartburn for a few days .
+[patient] well , since you mention anxiety , i was going through a really stressful job transition right around the time this happened .
+[doctor] okay . that's good to know . so stress from this could be , um ... could be , uh ... could be very well have contributed to your condition .
+[patient] okay .
+[doctor] so we could do an , uh , egd or upper endoscopy to take a look at your esophagus and stomach . this would allow us to look for esophagitis . but your symptoms occurred three months ago and you have n't had any additional episodes , so likely if it were esophagitis , it's already healed by the point ... by this point , and we would n't be able to see anything . the other option is just to continue to monitor , uh , for any additional symptoms at which point we could do the egd . uh , with you being asymptomatic for so long right now , i'm comfortable with that option . but what do you think ?
+[patient] i'd like to hold off on the egd and wait to see if i have more symptoms .
+[doctor] that sounds good . um , so you can call the office if you have any additional episodes of pain or any other symptoms you're concerned about . if that happens , we'll get you scheduled for an egd to take a look . if not , you can follow up with me ... follow up with me as needed for any other gi complaints .
+[patient] okay .
+[doctor] all right ? if you do n't have any questions for me , i'll walk you out to the check-out desk .
+[patient] no . that's it . thank you .
+[doctor] you're welcome . right this way . all right . uh , in assessment , please summarize the patient's history briefly , and let's list her possible etiologies such as , uh , gerd , dyspepsia , esophagitis , musculoskeletal etiologies , and anxiety . uh , suspect she had an anxiety attack related to her job transition , plus or minus a contribution from her musculoskeletal etiologies . um , in the plan , include our discussion of the egd versus monderning ... monitoring for symptom . patient elected to self-monitor her symptoms and will call with any reoccurrence or change . thanks .","CHIEF COMPLAINT
+
+Esophagitis.
+
+HISTORY OF PRESENT ILLNESS
+
+Betty Hill is a 53 y.o. female who presents to clinic today for a new patient evaluation of suspected esophagitis. The patient was referred from the emergency department where she was seen in early 10/2020 following 4 days of chest pain. The pain has resolved but she kept this appointment to discuss the original 4-day episode.
+
+The patient describes her chest pain in early 10/2020 as sharp and localized behind the sternum. She states that it felt like a heart attack and the onset was sudden. The pain was exacerbated by eating and accompanied by dysphagia. The patient is not able to say whether she had heartburn as she has never experienced heartburn before and is unsure what it feels like. When asked about potential triggers, the patient identifies that she was experiencing a lot of stress at that time due to a job transition. She was able to tolerate the chest pain and dysphagia for 4 days but reports that nothing she tried relieved her symptoms. She then presented to the emergency department and underwent labs and EKG. All results came back normal from these tests. She was not prescribed any medications in the emergency department but was given a referral to me for suspected esophagitis. Her chest pain and dysphagia resolved spontaneously approximately 3 days after her emergency department visit and has not recurred.
+
+The patient denies unintentional weight loss, weight gain, abdominal pain, constipation, and diarrhea. She states she is trying to lose weight.
+
+PAST HISTORY
+
+Medical
+Uterine fibroids.
+Anemia.
+
+Surgical
+Cholecystectomy.
+
+FAMILY HISTORY
+
+None reported.
+
+REVIEW OF SYSTEMS
+
+• Cardiovascular:  Positive for chest pain.
+• Gastrointestinal:  Positive for difficulty swallowing.
+• Psychiatric:  Positive for stress.
+
+PHYSICAL EXAM
+
+Gastrointestinal
+Mild tenderness to light palpation in the upper abdominal quadrants.
+
+RESULTS
+
+The patient’s emergency department records from her 10/2020 visit were reviewed, including the normal cardiac workup.
+
+ASSESSMENT
+
+The patient presents today following a visit to the emergency department in early 10/2020 for 4-days of sharp chest pain, made worse by eating, and dysphagia. Notably, the patient was experiencing higher levels of stress than normal for her at that time due to a job transition. Her cardiac evaluation in the emergency department was normal and she was referred to me for suspected esophagitis. The patient’s pain and associated dysphagia spontaneously resolved 3 days after her emergency department visit and has not recurred. Possible etiologies of her chest pain and dysphagia include GERD, dyspepsia, esophagitis, musculoskeletal etiologies, and anxiety. Based on her history today, I suspect she had an anxiety attack related to her job transition, plus or minus a contribution from musculoskeletal etiologies.
+
+Non-cardiac chest pain.
+
+Suspected etiology of anxiety with or without underlying musculoskeletal etiology.
+
+PLAN
+
+• We discussed the role of an EGD in evaluating her prior symptoms. Given her current asymptomatic status, I am comfortable foregoing the EGD for now in lieu of continued monitoring for symptom recurrence. The patient agreed to notify my office if her symptoms return at which time, we could schedule the EGD. The patient is agreeable to this plan.
+
+INSTRUCTIONS
+
+• Self-monitor for symptom recurrence and notify my office if this occurs.
+• Follow up as needed."
+virtscribe,D2N076,"[doctor] hello .
+[patient_guest] hi .
+[doctor] i'm dr. evelyn , one of the kidney doctors . it's good to meet you guys .
+[patient_guest] it's nice to meet you also .
+[doctor] yeah . so i was reading about this syndrome that i actually have never heard of .
+[patient_guest] yeah , me too .
+[doctor] i do n't think it's very common .
+[patient_guest] definitely not . it's c- pretty rare .
+[doctor] so-
+[doctor] can you start at the beginning ? i know she's a twin , so are these your first two babies ?
+[patient_guest] no , i have a son also who is nine . he also has autism .
+[doctor] okay .
+[patient_guest] and when the twins were born , katherine , she was about 4 pounds , 8 ounces . and her twin was a bit smaller , at 3 pounds , 13 ounces .
+[patient_guest] katherine , she was doing fine . she just had problems with eating , where she would stop breathing when she was eating .
+[doctor] like preemie type stuff ?
+[patient_guest] uh- . yeah . she just had a hard time regulating her temperature , but she did fine . she does have a gi doctor , because she has reflex really bad . she also had a dietician , who told us to take her off cow's milk . which we did . and then she has seen an allergist , and also a neurologist ... who diagnosed her with this syndrome , because she still does n't walk and she was n't sitting by herself a year old .
+[doctor] yeah .
+[patient_guest] but so now she is crawling and she is trying to take steps , so think she's doing pretty good .
+[doctor] good . is she in therapy ?
+[patient_guest] she is in therapy . she's in feeding therapy , occupational therapy , and also physical therapy .
+[doctor] awesome . okay .
+[patient_guest] and we also have speech therapy , who is going to be starting within the next couple of weeks .
+[doctor] that's great .
+[patient_guest] so , she has a lot of therapies . we have also seen an orthopedic and an ophthalmologist . i can never say that . we have seen everything , really .
+[doctor] and audiology too , right ?
+[patient_guest] yes .
+[doctor] yeah , wow. .
+[patient_guest] yeah , it has definitely been a whirlwind of stuff . when we saw the geneticist , she told us that sometimes people with this syndrome , they have trouble with their kidneys . that they might actually fuse into one . she also said sometimes they have problems with their legs , so that was why we saw ortho .
+[doctor] okay . okay .
+[patient_guest] so we have seen everybody , really . we are just here to make sure that her kidneys are looking good right now .
+[doctor] yeah , okay . so , um , tell me about how many wet diapers she has in a 24 hour period ?
+[patient_guest] she has a lot .
+[doctor] so like normal 8 to 10 , or like 20 ?
+[patient_guest] yeah , it's around 8 to 10 .
+[doctor] okay . great .
+[patient_guest] yeah , she seems to pee a lot , and it feels like she drinks a lot too .
+[doctor] that's perfect .
+[patient_guest] and she used to only drink milk , and then i took her off dairy milk . so when i say milk , i actually mean , you know , ripple pea protein milk .
+[doctor] sure , yeah .
+[patient_guest] so i give her that milk , water now that she's used to it , and sometimes water with just a little bit of juice . so i do feel like she's drinking a lot better now .
+[doctor] that's great . and she's how old now ?
+[patient_guest] she'll be two mo- two next month .
+[doctor] okay . is her twin a boy or a girl ?
+[patient_guest] she's a girl .
+[doctor] okay , and how's she doing ?
+[patient_guest] she's doing really good . she's running around , and she does n't have any problems .
+[doctor] all right . is she bigger than her or the same size ?
+[patient_guest] they're about the same size . they're able to wear the same clothes , so ...
+[doctor] okay .
+[patient_guest] i do n't even think she's a pound hav- heavier , actually .
+[doctor] yeah . yeah .
+[patient_guest] but she is a little bit taller than her ... um , katherine . she's just sh- a little shorter and chunkier , but i think that's a part of her syndrome .
+[doctor] yeah . yeah , i was reading all the things associated with the syndrome . it sounds like we're looking for continual- congenital anomalies wi- of the kidney and urinary tract . which is basically something is wrong with the plumbing .
+[patient_guest] okay .
+[doctor] so the only way to know that , is to do a kidney ultrasound .
+[patient_guest] okay , that sounds okay .
+[doctor] okay . let me put that into the system , and then downstairs they can do the ultrasound .
+[patient_guest] all right , thank you .
+[doctor] okay , yeah . where do you all live ?
+[patient_guest] uh , we live in dallas .
+[doctor] okay . anybody in the family with kidney failure , dialysis or transplant ?
+[patient_guest] no .
+[doctor] okay . so let's get your ultrasound done , and we'll see how it goes .
+[patient_guest] all right , that sounds good .
+[doctor] all right . let me take a quick look at her .
+[patient_guest] sure .
+[doctor] all right . please use my physical exam template . um , i wan na take a quick listen to her heart and lungs . i'll look in her ears too . and she can sit , she can just sit on your lap .
+[patient_guest] okay .
+[doctor] all right . that's it .
+[patient_guest] all right , that was n't too bad .
+[doctor] hmm . so , let's complete the ultrasound today . i'll call you with the results . if it's normal , you wo n't need to see me again , but if it's abnormal , you can see me in kennesaw .
+[patient_guest] okay , that sounds good .
+[doctor] okay . we'll determine what the next steps are if there are any , after we see her results .
+[patient_guest] all right , sounds good . thank you .
+[doctor] you're welcome . the nurse will be in to have you complete some paperwork , and give you instructions for the ultrasound . we'll talk soon .
+[patient_guest] all right . thank you , and have a good day .
+[doctor] you too .
+[doctor] all right . physical exams show the well-nourished female , who is slightly fussy when examined . eyes are small appearing . she has mild hypotonia of the lower extremities in her arms . normal external female genitalia .
+[doctor] assessment and plan . katherine is a 22-month-old former 34 and 3-week-old , twin with smith magenis syndrome . several organ systems can be affected by this chromosomal deletion syndrome . congenital anomalies of the kidney and urinary tract have been reported in the literature .
+[doctor] we will obtain the screening of the kidneys by ultrasound today . if there are abnormalities on the kidney ultrasound , we will determine next steps and future follow-up . the family lives in dallas , georgia , so her follow-up should be at the town center location .
+[doctor] end of recording .","CHIEF COMPLAINT
+
+Renal screening tests.
+
+HISTORY OF PRESENT ILLNESS
+
+Katherine Lopez is a 22-month-old female, born at 34 weeks +3 days gestation, diagnosed with the rare Smith-Magenis syndrome and associated global developmental delays. She was referred to nephrology by genetics who recommended renal screening tests. At birth, the patient weighed 4 pounds 8 ounces, exhibited difficulties during eating where she would stop breathing, and challenges regulating her body temperature; determined to be typical issues associated with premature birth. The patient has seen many specialists, including GI for severe reflux, a dietitian who recommended discontinuing consumption of cow’s milk, and a neurologist who diagnosed her with Smith-Magenis syndrome. Additionally, she has been seen by a geneticist, orthopedist, ophthalmologist, and audiologist. The patient is not ambulatory, did not sit up unassisted until 1 years old, and is currently crawling and attempting to take steps. She will be starting speech therapy in the next few weeks, and currently she is in occupational, feeding, and physical therapy. The geneticist informed the patient's mother that patients with Smith-Magenis syndrome usually have kidney issues where “the kidneys fuse into one” and issues with their legs.
+
+The patient has approximately 8 to 10 wet diapers in a 24-hour period. Her mother notes that she is doing better with drinking fluids and she urinates “a lot”. The patient drinks Ripple Pea Protein milk instead of cow’s milk, water and water mixed with a small amount of juice. Her twin sister is approximately the same size, and their weight is essentially the same, she is healthy, and the mom denies any known health concerns or diagnoses. The mom states that Katherine is shorter and seems chubbier related to her syndrome. She also has a 9-year-old brother who is diagnosed with autism.
+
+BIRTH HISTORY
+
+Twin gestation. Birth weight 4 pounds 8 ounces.
+
+PAST HISTORY
+
+Medical
+Smith-Magenis syndrome.
+
+SOCIAL HISTORY
+
+Patient accompanied to appointment by her mother.
+Sibling: 9-year-old brother and twin sister.
+
+FAMILY HISTORY
+
+Brother: 9 years old, positive for autism.
+Twin sister: absence of Smith-Magenis syndrome, no known health conditions.
+No known family history of genetic conditions, kidney failure, dialysis, or kidney transplant.
+
+PHYSICAL EXAM
+
+Constitutional
+Well-nourished female, slightly fussy when examined.
+
+Eyes
+Presences of microphthalmia.
+
+Genitourinary
+Normal external female genitalia.
+
+Musculoskeletal
+Extremities: Presence of mild hypotonia of lower extremities and the arms.
+
+ASSESSMENT
+
+• Smith-Magenis syndrome.
+Katherine is a 22-month-old former 34+3-week-old twin with Smith-Magenis syndrome.
+Several organ systems can be affected by this chromosomal deletion syndrome and congenital anomalies of the kidney and urinary tract have been reported in the literature.
+
+PLAN
+
+We will obtain a kidney ultrasound screening today. If there are abnormalities on the kidney ultrasound, we will determine the next steps and future follow-up. The family lives in Dallas, Georgia, so her follow-up should be at the Town Center location.
+
+INSTRUCTIONS
+
+Complete ultrasound today. I will call patient with results and possible next steps."
