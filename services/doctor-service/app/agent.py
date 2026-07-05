@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import csv
 import datetime
 import logging
 import os
@@ -24,55 +23,28 @@ from google.adk.apps import App
 from google.adk.models import Gemini
 from google.adk.tools import ToolContext
 from google.genai import types
+from pydantic import BaseModel, Field
 
 # Setup logger
 logger = logging.getLogger(__name__)
 
 # --- Helpers ---
 
-def lookup_encounter_id(doctor_name: str) -> str:
-    """Finds the encounter ID corresponding to a doctor name from metadata.csv."""
-    paths_to_try = [
-        "e:/Gen AI Projects/CCCL_Hackathon/data/metadata.csv",
-        "../../data/metadata.csv",
-        "../../../data/metadata.csv",
-        "data/metadata.csv",
-    ]
-    for p in paths_to_try:
-        abs_p = os.path.abspath(p)
-        if os.path.exists(abs_p):
-            try:
-                with open(abs_p, mode='r', encoding='utf-8') as f:
-                    reader = csv.DictReader(f)
-                    for row in reader:
-                        row_doc = row.get("doctor_name", "").strip().lower()
-                        if row_doc == doctor_name.strip().lower():
-                            return row.get("encounter_id", "").strip()
-            except Exception as e:
-                logger.error(f"Error reading CSV at {abs_p}: {e}")
-    logger.warning(f"Encounter ID not found for doctor {doctor_name}. Defaulting to UNKNOWN.")
-    return "UNKNOWN"
+def generate_encounter_id() -> str:
+    """Generates a unique encounter ID in the format D2N###."""
+    # E.g., D2N482
+    return f"D2N{uuid.uuid4().int % 900 + 100}"
 
 def upload_transcript_to_gcs(transcript: str, encounter_id: str) -> str:
     """Uploads transcript to GCS bucket doctor-patient-transcript-upload."""
     bucket_name = "doctor-patient-transcript-upload"
     filename = f"transcript_{encounter_id}_{uuid.uuid4().hex[:8]}.txt"
-    try:
-        from google.cloud import storage
-        client = storage.Client()
-        try:
-            bucket = client.get_bucket(bucket_name)
-        except Exception:
-            try:
-                bucket = client.create_bucket(bucket_name)
-            except Exception:
-                bucket = client.bucket(bucket_name)
-        blob = bucket.blob(filename)
-        blob.upload_from_string(transcript, content_type="text/plain")
-        return f"gs://{bucket_name}/{filename}"
-    except Exception as e:
-        logger.warning(f"Standard GCS upload failed ({e}). Returning fallback GCS URL.")
-        return f"gs://{bucket_name}/{filename}"
+    from google.cloud import storage
+    client = storage.Client()
+    bucket = client.bucket(bucket_name)
+    blob = bucket.blob(filename)
+    blob.upload_from_string(transcript, content_type="text/plain")
+    return f"gs://{bucket_name}/{filename}"
 
 def upload_doctor_details_to_firestore(
     encounter_id: str,
@@ -81,7 +53,7 @@ def upload_doctor_details_to_firestore(
     transcript_gcs_url: str,
     soap_note: str
 ) -> dict:
-    """Uploads doctor details to Firestore under doctor_encounters collection."""
+    """Uploads doctor details to Firestore under doctors-encounters collection and updates partients collection."""
     doc_data = {
         "doctor_name": doctor_name,
         "doctor_dept": doctor_dept,
@@ -90,51 +62,39 @@ def upload_doctor_details_to_firestore(
         "soap_note": soap_note,
         "uploaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
     }
-    try:
-        from google.cloud import firestore
-        db = firestore.Client()
-        doc_ref = db.collection("doctor_encounters").document(encounter_id)
-        doc_ref.set(doc_data)
-        return {
-            "status": "success",
-            "encounter_id": encounter_id,
-            "data": doc_data
-        }
-    except Exception as e:
-        logger.warning(f"Standard Firestore doctor upload failed ({e}). Returning fallback success.")
-        return {
-            "status": "success_mock",
-            "encounter_id": encounter_id,
-            "data": doc_data
-        }
+    from google.cloud import firestore
+    db = firestore.Client(database="cccl-firestore")
+    doc_ref_doc = db.collection("doctors-encounters").document(encounter_id)
+    doc_ref_doc.set(doc_data)
+    
+    # Also write SOAP note to partients collection with merge=True to prevent race condition overwrites
+    doc_ref_pat = db.collection("partients").document(encounter_id)
+    doc_ref_pat.set({"soap_note": soap_note}, merge=True)
+    return {
+        "status": "success",
+        "encounter_id": encounter_id,
+        "data": doc_data
+    }
 
 def upload_patient_details_to_firestore(
     encounter_id: str,
     patient_details: dict
 ) -> dict:
-    """Uploads patient details to Firestore under patient_details collection."""
+    """Uploads patient details to Firestore under partients collection with merge=True."""
     doc_data = {
         **patient_details,
         "encounter_id": encounter_id,
         "uploaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
     }
-    try:
-        from google.cloud import firestore
-        db = firestore.Client()
-        doc_ref = db.collection("patient_details").document(encounter_id)
-        doc_ref.set(doc_data)
-        return {
-            "status": "success",
-            "encounter_id": encounter_id,
-            "data": doc_data
-        }
-    except Exception as e:
-        logger.warning(f"Standard Firestore patient upload failed ({e}). Returning fallback success.")
-        return {
-            "status": "success_mock",
-            "encounter_id": encounter_id,
-            "data": doc_data
-        }
+    from google.cloud import firestore
+    db = firestore.Client(database="cccl-firestore")
+    doc_ref = db.collection("partients").document(encounter_id)
+    doc_ref.set(doc_data, merge=True)
+    return {
+        "status": "success",
+        "encounter_id": encounter_id,
+        "data": doc_data
+    }
 
 # --- Tools ---
 
@@ -154,7 +114,7 @@ async def upload_transcript_to_gcs_tool(
     Returns:
         A dictionary containing the upload status and details.
     """
-    encounter_id = lookup_encounter_id(doctor_name)
+    encounter_id = generate_encounter_id()
     gcs_url = upload_transcript_to_gcs(transcript, encounter_id)
     
     # Save values to state for downstream agents
@@ -191,33 +151,26 @@ async def upload_doctor_details_to_firestore_tool(
     tool_context.state["doctor_upload_result"] = res
     return res
 
+class PatientDetails(BaseModel):
+    patient_name: str = Field(description="The extracted name of the patient.")
+    patient_gender: str = Field(description="The extracted gender of the patient.")
+    patient_age: str = Field(description="The extracted age of the patient.")
+    other_medical_entities: list[str] = Field(description="A list of other medical entities extracted.")
+
 async def upload_patient_details_to_firestore_tool(
-    patient_name: str,
-    patient_gender: str,
-    patient_age: str,
-    other_medical_entities: list[str],
+    patient_details: PatientDetails,
     tool_context: ToolContext
 ) -> dict:
     """Uploads extracted patient details to Firestore.
 
     Args:
-        patient_name: The extracted name of the patient.
-        patient_gender: The extracted gender of the patient.
-        patient_age: The extracted age of the patient.
-        other_medical_entities: A list of other medical entities extracted.
+        patient_details: The extracted details of the patient.
 
     Returns:
         A dictionary containing the status of the Firestore upload.
     """
     encounter_id = tool_context.state.get("encounter_id", "UNKNOWN")
-    patient_details = {
-        "patient_name": patient_name,
-        "patient_gender": patient_gender,
-        "patient_age": patient_age,
-        "other_medical_entities": other_medical_entities
-    }
-    
-    res = upload_patient_details_to_firestore(encounter_id, patient_details)
+    res = upload_patient_details_to_firestore(encounter_id, patient_details.model_dump())
     tool_context.state["patient_upload_result"] = res
     return res
 
