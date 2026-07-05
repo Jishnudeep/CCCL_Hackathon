@@ -141,14 +141,28 @@ async def test_retrieve_patient_record_tool_not_found(mock_firestore_client):
     assert "patient_record" not in ctx.state
 
 @pytest.mark.asyncio
-async def test_init_state_callback():
+@patch("app.agent.fetch_patient_record")
+async def test_init_state_callback(mock_fetch):
+    # Case 1: Empty state, should fallback to instructions
     mock_ctx = MagicMock()
     mock_ctx.state = {}
-    
     await init_state(mock_ctx)
-    
     assert "patient_record" in mock_ctx.state
     assert "No record retrieved yet" in mock_ctx.state["patient_record"]
+
+    # Case 2: State has credentials, fetch succeeds
+    mock_fetch.return_value = {"patient_name": "patrick allen", "soap_note": "SOAP NOTE"}
+    mock_ctx_with_creds = MagicMock()
+    mock_ctx_with_creds.state = {"encounter_id": "D2N028", "patient_name": "patrick allen"}
+    await init_state(mock_ctx_with_creds)
+    assert mock_ctx_with_creds.state["patient_record"] == {"patient_name": "patrick allen", "soap_note": "SOAP NOTE"}
+
+    # Case 3: State has credentials, fetch fails/returns None
+    mock_fetch.return_value = None
+    mock_ctx_fail = MagicMock()
+    mock_ctx_fail.state = {"encounter_id": "D2N028", "patient_name": "patrick allen"}
+    await init_state(mock_ctx_fail)
+    assert "No record retrieved yet" in mock_ctx_fail.state["patient_record"]
 
 def test_google_search_agent_setup():
     from app.agent import google_search_agent, root_agent

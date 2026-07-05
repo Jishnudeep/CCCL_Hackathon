@@ -20,10 +20,24 @@ from google.adk.models import Gemini
 from google.adk.tools import AgentTool, google_search
 from google.genai import types
 
-from app.firestore_tool import retrieve_patient_record_tool
+from app.firestore_tool import retrieve_patient_record_tool, fetch_patient_record
 
 async def init_state(callback_context: CallbackContext) -> None:
     """Callback to initialize the patient_record placeholder in session state."""
+    # Check if encounter_id and patient_name are present in state (passed from frontend during session creation)
+    encounter_id = callback_context.state.get("encounter_id")
+    patient_name = callback_context.state.get("patient_name")
+    
+    if encounter_id and patient_name:
+        # Automatically load the patient record directly on session initiation
+        try:
+            record = fetch_patient_record(encounter_id, patient_name)
+            if record:
+                callback_context.state["patient_record"] = record
+                return
+        except Exception:
+            pass
+
     if "patient_record" not in callback_context.state:
         callback_context.state["patient_record"] = (
             "No record retrieved yet. Please ask the user for their encounter ID and patient name, "
